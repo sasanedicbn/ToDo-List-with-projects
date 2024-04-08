@@ -23,7 +23,7 @@ letter-spacing: 5.5px;
 /* SIDEBAR */
 .sidebar{
   height: 88.3vh;
-  width: 400px;
+  width: 505px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -83,4 +83,46 @@ letter-spacing: 5.5px;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+}
+/* INPUTPROJECT */
+.input-project-item {
+  list-style: none;
+}
+
+.input-project-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  margin-right: 8px;
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; 
+  margin-left: 6px;
+}
+
+.add-button,
+.cancel-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Povećajte padding za veće gumbe */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Povećajte veličinu fonta */
+  margin-right: 10px; /* Dodajte malo prostora između gumba */
+}
+
+.cancel-button {
+  background-color: #f44336;
+}
+
+.add-button:hover,
+.cancel-button:hover {
+  opacity: 0.8;
 }
