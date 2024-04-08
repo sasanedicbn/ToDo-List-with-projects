@@ -1,9 +1,18 @@
-const SideBar = () => {
+import { useState } from "react";
+import InputProject from "./InputProject";
+
+const SideBar = ({addNewProject}) => {
+    const [showInput, setShowInput] = useState(false)
+    function showInputhandler(){
+        setShowInput(!showInput)
+    }
     return(
         <div className="sidebar">
-            <button className="sidebar-btn">+ New Project</button>
+            <button className="sidebar-btn" onClick={showInputhandler}>+ New Project</button>
             <p className="sidebar-text">Projects </p>
-            <ul></ul>
+            <ul>
+                {showInput && <InputProject removeInputhandler={showInputhandler}/>}
+            </ul>
         </div>
     )
 }
