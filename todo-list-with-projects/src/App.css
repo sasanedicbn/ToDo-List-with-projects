@@ -15,21 +15,23 @@ body{
 .header-title{
 font-size: 38px;
 display: flex;
-justify-content: center;
+justify-content: start;
+padding-left: 38px;
 padding-top: 25px;
 letter-spacing: 5.5px;
 }
 /* SIDEBAR */
 .sidebar{
   height: 88.3vh;
-  width: 350px;
+  width: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-top: 20px;
   background-color: rgb(245, 245, 180);
+  border-right: 1px solid rgb(224, 223, 223);
 }
-.sidebar-btn {
+.sidebar-btn, .todo-btn{
   background-color: rgb(236, 236, 158);
   color: white;
   border: none;
@@ -46,12 +48,12 @@ letter-spacing: 5.5px;
   font-weight: bold;
 }
 
-.sidebar-btn:hover {
+.sidebar-btn:hover, .todo-btn:hover{
   background-color: rgb(219, 219, 122);
   color:white;
 }
 
-.sidebar-text {
+.sidebar-text, .todo-text {
   margin-top: 10px;
   font-size: 28px;
   color: #333;
@@ -64,8 +66,21 @@ letter-spacing: 5.5px;
   margin: 0;
 }
 
-.sidebar-text::after {
+.sidebar-text::after,
+.todo-text::after {
   content: " ↓";
   color: black; 
   font-size: 36px;
+}
+.container-main{
+  display: flex;
+}
+/* TODO */
+.todo{
+  background-color: rgb(250, 246, 246);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
