@@ -6,9 +6,7 @@ import ToDo from "./ToDo";
 // za novi projekat
 const Main = () => {
     const [project, setProject] = useState([{}])
-    // function addNewProject{projectObject}{
-    //     setProject(projectObject)
-    // }
+  
     return(
     <div className="container-main">
         <SideBar/>
