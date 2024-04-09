@@ -5,7 +5,7 @@ import ToDo from "./ToDo";
 // const [project, setproject] =useState ([{id:, todos[]}])
 // za novi projekat
 const Main = () => {
-    const [project, setProject] = useState([{}])
+    const [project, setProject] = useState([])
   
     return(
     <div className="container-main">
