@@ -108,14 +108,14 @@ letter-spacing: 5.5px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  padding: 8px 16px; /* Povećajte padding za veće gumbe */
+  padding: 8px 16px; 
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; /* Povećajte veličinu fonta */
-  margin-right: 10px; /* Dodajte malo prostora između gumba */
+  font-size: 16px;
+  margin-right: 10px; 
 }
 
 .cancel-button {
@@ -125,4 +125,28 @@ letter-spacing: 5.5px;
 .add-button:hover,
 .cancel-button:hover {
   opacity: 0.8;
+}
+/* projects in sidebar */
+.project-container{
+  background-color: rgb(216, 216, 204);
+  width: 340px;
+  height: 42.5px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin:8px
+}
+.project-name{
+  font-size: 20px;
+}
+.project-btn-delete{
+  background-color: rgb(95, 92, 92);
+  color: white;
+  border: none;
+  padding: 4px 8px; 
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+
 }

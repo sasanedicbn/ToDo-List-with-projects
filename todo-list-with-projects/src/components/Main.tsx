@@ -6,6 +6,7 @@ import ToDo from "./ToDo";
 // za novi projekat
 const Main = () => {
     const [projects, setProject] = useState([])
+    console.log(projects)
    
     function addProject (name) {
         const newProject = {
