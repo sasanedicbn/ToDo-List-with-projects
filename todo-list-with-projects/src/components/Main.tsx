@@ -2,8 +2,7 @@ import { useState } from "react";
 import SideBar from "./SideBar";
 import ToDo from "./ToDo";
 
-// const [project, setproject] =useState ([{id:, todos[]}])
-// za novi projekat
+
 const Main = () => {
     const [projects, setProject] = useState([])
     console.log(projects)
@@ -17,9 +16,12 @@ const Main = () => {
         }
         setProject(prevProjects => [...prevProjects, newProject ])
     }
+    function deleteProject(id) {
+        setProject(prevProjects => prevProjects.filter(project => project.id !== id));
+      }
     return(
     <div className="container-main">
-        <SideBar projects={projects} addProject={addProject}/>
+        <SideBar projects={projects} addProject={addProject} deleteProject={deleteProject}/>
         <ToDo projects={projects}/>
     </div>
     )
