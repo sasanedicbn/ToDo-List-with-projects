@@ -6,10 +6,17 @@ import ToDo from "./ToDo";
 // za novi projekat
 const Main = () => {
     const [project, setProject] = useState([])
-  
+   
+    function addProject (todo) {
+        const newProject = {
+            id: Math.random().toString(36).substring(7),
+            todos: [],
+        }
+        setProject(prevProjects => [...prevProjects, newProject ])
+    }
     return(
     <div className="container-main">
-        <SideBar/>
+        <SideBar addProject={addProject}/>
         <ToDo/>
     </div>
     )

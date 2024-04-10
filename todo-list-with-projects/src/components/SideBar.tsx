@@ -1,5 +1,4 @@
 import { useState } from "react";
-import InputProject from "./InputProject";
 
 const SideBar = ({addNewProject}) => {
     const [showInput, setShowInput] = useState(false)
@@ -11,7 +10,13 @@ const SideBar = ({addNewProject}) => {
             <button className="sidebar-btn" onClick={showInputhandler}>+ New Project</button>
             <p className="sidebar-text">Projects </p>
             <ul>
-                {showInput && <InputProject removeInputhandler={showInputhandler}/>}
+                {showInput &&  <li className="input-project-item">
+                                <div className="input-project-container"> 
+                                 <input type='text' className="input-field" />
+                                 <button className="add-button">Add</button> 
+                                 <button onClick={showInputhandler} className="cancel-button">Cancel</button> 
+                               </div>
+                              </li>}
             </ul>
         </div>
     )
