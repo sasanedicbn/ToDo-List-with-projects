@@ -7,10 +7,10 @@ import ToDo from "./ToDo";
 const Main = () => {
     const [projects, setProject] = useState([])
    
-    function addProject (todo) {
+    function addProject (name) {
         const newProject = {
             id: Math.random().toString(36).substring(7),
-            name: '',
+            name: name,
             todos: [],
 
         }

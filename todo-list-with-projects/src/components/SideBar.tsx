@@ -3,14 +3,15 @@ import React, { useState } from "react";
 const SideBar = ({ projects, addProject, deleteProject }) => {
   const [showInput, setShowInput] = useState(false);
   const [projectName, setProjectName] = useState("");
-
+ 
+  console.log(projectName)
   function showInputhandler() {
     setShowInput(!showInput);
   }
 
-  function addNewProject() {
+  function addNewProject(name) {
     if (projectName.trim() !== "") {
-      addProject({ name: projectName });
+      addProject(projectName);
       setProjectName(""); // Resetovanje stanja naziva projekta nakon dodavanja
       setShowInput(false); // Sakrivanje input polja nakon dodavanja
     }
