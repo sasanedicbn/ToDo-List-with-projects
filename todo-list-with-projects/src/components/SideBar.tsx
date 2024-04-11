@@ -25,8 +25,8 @@ const SideBar = ({ projects, addProject, deleteProject, showToDo }) => {
       <p className="sidebar-text">Projects</p>
       <ul>
         {projects.map(project => (
-          <li className="project-container" key={project.id}>
-            <span onClick={() => showToDo(project.id)}>{project.name}</span>
+          <li className="project-container" key={project.id} onClick={() => showToDo(project.id)}>
+            <span >{project.name}</span>
             <button className="project-btn-delete" onClick={() => deleteProject(project.id)}>Delete</button>
           </li>
         ))}
