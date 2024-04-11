@@ -1,6 +1,6 @@
 import  { useState } from "react";
 
-const SideBar = ({ projects, addProject, deleteProject }) => {
+const SideBar = ({ projects, addProject, deleteProject, showToDo }) => {
   const [showInput, setShowInput] = useState(false);
   const [projectName, setProjectName] = useState("");
  
@@ -12,8 +12,8 @@ const SideBar = ({ projects, addProject, deleteProject }) => {
   function addNewProject(name) {
     if (projectName.trim() !== "") {
       addProject(projectName);
-      setProjectName(""); // Resetovanje stanja naziva projekta nakon dodavanja
-      setShowInput(false); // Sakrivanje input polja nakon dodavanja
+      setProjectName(""); 
+      setShowInput(false); 
     }
   }
 
@@ -26,7 +26,7 @@ const SideBar = ({ projects, addProject, deleteProject }) => {
       <ul>
         {projects.map(project => (
           <li className="project-container" key={project.id}>
-            <span className="project-name">{project.name}</span>
+            <span onClick={() => showToDo(project.id)}>{project.name}</span>
             <button className="project-btn-delete" onClick={() => deleteProject(project.id)}>Delete</button>
           </li>
         ))}

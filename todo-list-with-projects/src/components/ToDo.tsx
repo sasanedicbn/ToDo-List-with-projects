@@ -1,24 +1,24 @@
-
-const ToDo = ({ projects }) => {
-    console.log(projects)
-  return (
-    <div className="todo">
-      <button className="todo-btn">+ New todo</button>
-      <p className="todo-text">Projects</p>
-      <ul>
-        {projects.map(project => (
-          <li key={project.id}>
-            <h3>{project.projectName }</h3>
+const ToDo = ({ projects, activeProjectId }) => {
+    return (
+        <div className="todo">
+            <button className="todo-btn">+ New todo</button>
+            <p className="todo-text">Projects</p>
             <ul>
-              {project.todos.map(todo => (
-                <li key={todo.id}>{todo.task}</li>
-              ))}
+                {projects
+                    .filter(project => project.id === activeProjectId) // Filtriramo samo aktivni projekt
+                    .map(project => (
+                        <li key={project.id}>
+                            <h3>{project.name}</h3>
+                            <ul>
+                                {project.todos.map(todo => (
+                                    <li key={todo.id}>{todo.name}</li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))}
             </ul>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default ToDo;
