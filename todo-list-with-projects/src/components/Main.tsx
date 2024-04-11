@@ -19,11 +19,14 @@ const Main = () => {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
     }
 
- 
+    function showToDo(id) {
+        setActiveProjectId(id); 
+    }
+
     return(
         <div className="container-main">
             <SideBar projects={projects} addProject={addProject} deleteProject={deleteProject} showToDo={showToDo}/>
-            <ToDo projects={projects} /> 
+            <ToDo projects={projects} activeProjectId={activeProjectId} /> 
         </div>
     );
 }
