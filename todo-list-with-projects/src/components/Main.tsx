@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import ToDo from "./ToDo";
 
 
+
 const Main = () => {
     const [projects, setProject] = useState([])
     console.log(projects)
@@ -12,7 +13,6 @@ const Main = () => {
             id: Math.random().toString(36).substring(7),
             name: name,
             todos: [],
-
         }
         setProject(prevProjects => [...prevProjects, newProject ])
     }

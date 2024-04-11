@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const SideBar = ({ projects, addProject, deleteProject }) => {
   const [showInput, setShowInput] = useState(false);
