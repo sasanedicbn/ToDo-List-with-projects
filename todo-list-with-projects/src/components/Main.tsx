@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SideBar from "./SideBar";
-import ToDo from "./ToDo";
+import Projects from "./Projects";
 
 const Main = () => {
     const [projects, setProjects] = useState([]);
@@ -26,7 +26,7 @@ const Main = () => {
     return(
         <div className="container-main">
             <SideBar projects={projects} addProject={addProject} deleteProject={deleteProject} showToDo={showToDo}/>
-            <ToDo projects={projects} activeProjectId={activeProjectId} /> 
+            <Projects projects={projects} activeProjectId={activeProjectId} /> 
         </div>
     );
 }

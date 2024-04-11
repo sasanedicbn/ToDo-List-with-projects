@@ -1,11 +1,11 @@
-const ToDo = ({ projects, activeProjectId }) => {
+const Projects = ({ projects, activeProjectId }) => {
     return (
         <div className="todo">
             <button className="todo-btn">+ New todo</button>
             <p className="todo-text">Projects</p>
             <ul>
                 {projects
-                    .filter(project => project.id === activeProjectId) // Filtriramo samo aktivni projekt
+                    .filter(project => project.id === activeProjectId)
                     .map(project => (
                         <li key={project.id}>
                             <h3>{project.name}</h3>
@@ -21,4 +21,4 @@ const ToDo = ({ projects, activeProjectId }) => {
     );
 };
 
-export default ToDo;
+export default Projects;
