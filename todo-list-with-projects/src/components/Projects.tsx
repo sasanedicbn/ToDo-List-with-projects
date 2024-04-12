@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ToDos from "./ToDos";
+import ToDoInput from "./ToDoInput";
 
 const Projects = ({ projects, activeProjectId }) => {
     const [showToDos, setShowToDos] = useState(false);
@@ -17,28 +17,7 @@ const Projects = ({ projects, activeProjectId }) => {
                     .filter(project => project.id === activeProjectId)
                     .map(project => (
                         showToDos && (
-                            <li  key={project.id} className="input-project-item">
-                            <div className="input-project-container">
-                              <input
-                                type="text"
-                                className="input-field"
-                                placeholder="Enter todo"
-                                // onChange={e => setProjectName(e.target.value)}
-                              />
-                              <button className="add-button" >
-                                Add
-                              </button>
-                              <button  className="cancel-button">
-                                Cancel
-                              </button>
-                            </div>         
-                                <ul>
-                                    {project.todos.map(todo => (
-                                        <ToDos key={todo.id} todo={todo}/>
-                                    ))}
-                                </ul>
-                             </li>
-
+                           <ToDoInput project={project} removeToDoInput={toggleToDosHandler}/>
                         )
                     ))}
             </ul>
