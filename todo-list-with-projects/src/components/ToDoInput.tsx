@@ -7,6 +7,7 @@ const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler 
 
     const handleAddTodo = () => {
         const todoValue = {
+            id: Math.random().toString(36).substring(7),
             title: todoText,
             date: dueDate,
             checked: false,
