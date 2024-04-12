@@ -17,7 +17,7 @@ const Projects = ({ projects, activeProjectId, addToDo }) => {
                     .filter(project => project.id === activeProjectId)
                     .map(project => (
                         showToDos && (
-                           <ToDoInput project={project} projectId={project.id} removeToDoInput={toggleToDosHandler} addToDo={addToDo}/>
+                           <ToDoInput project={project} projectId={project.id} addToDo={addToDo} />
                         )
                     ))}
             </ul>
