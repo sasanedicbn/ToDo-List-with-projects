@@ -1,12 +1,18 @@
 import { useState } from 'react';
+import ToDos from './ToDos';
 
-const ToDoInput = ({ project, removeToDoInput }) => {
+
+const ToDoInput = ({ project, removeToDoInput,addToDo, projectId }) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
 
     const handleAddTodo = () => {
-        // Implement your logic to add todo here
-        // You can use todoText and dueDate states
+        const todoValue = {
+            title:todoText,
+            date:dueDate,
+            checked: false,
+        }
+        addToDo(todoValue, projectId)
     };
 
     return (

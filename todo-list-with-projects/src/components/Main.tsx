@@ -14,6 +14,23 @@ const Main = () => {
         };
         setProjects(prevProjects => [...prevProjects, newProject]);
     }
+    function addToDo(todo, projectId) {
+        setProjects(prevProjects => {
+            return prevProjects.map(project => {
+                if (project.id === projectId) {
+                    // Ako je ovo ciljani projekat, ažurirajte listu todos
+                    return {
+                        ...project,
+                        todos: [...project.todos, todo]
+                    };
+                }
+                // Inače, vratite projekat nepromenjen
+                return project;
+            });
+        });
+    }
+    
+    
 
     function deleteProject(id) {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
@@ -22,11 +39,12 @@ const Main = () => {
     function showToDo(id) {
         setActiveProjectId(id); 
     }
+    console.log(projects)
 
     return(
         <div className="container-main">
             <SideBar projects={projects} addProject={addProject} deleteProject={deleteProject} showToDo={showToDo}/>
-            <Projects projects={projects} activeProjectId={activeProjectId} /> 
+            <Projects projects={projects} activeProjectId={activeProjectId} addToDo={addToDo} /> 
         </div>
     );
 }
