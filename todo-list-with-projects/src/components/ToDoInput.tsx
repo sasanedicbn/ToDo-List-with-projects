@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import ToDos from './ToDos';
 
-const ToDoInput = ({ project, projectId, addToDo }) => {
+const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler }) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
-    const [showToDoInput, setShowToDoInput] = useState(true);
 
     const handleAddTodo = () => {
         const todoValue = {
@@ -13,15 +12,13 @@ const ToDoInput = ({ project, projectId, addToDo }) => {
             checked: false,
         };
         addToDo(todoValue, projectId);
+        setTodoText('')
+        setDueDate('')
     };
-
-    function cancelInputHandler() {
-        setShowToDoInput(false);
-    }
 
     return (
         <>
-            {showToDoInput && (
+            {showToDos && (
                 <li key={project.id} className="custom-input-project-item">
                     <div className="custom-input-project-container">
                         <div className='custom-input-project-first-child'>
@@ -44,7 +41,7 @@ const ToDoInput = ({ project, projectId, addToDo }) => {
                             <button className="custom-add-button" onClick={handleAddTodo}>
                                 Add
                             </button>
-                            <button className="custom-cancel-button" onClick={cancelInputHandler}>
+                            <button className="custom-cancel-button" onClick={toggleToDosHandler}>
                                 Cancel
                             </button>
                         </div>

@@ -262,6 +262,7 @@ border:1px solid rgb(172, 172, 172);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .custom-todo-actions{
   display: flex;

@@ -7,18 +7,18 @@ const Projects = ({ projects, activeProjectId, addToDo }) => {
     function toggleToDosHandler() {
         setShowToDos(!showToDos);
     }
-
+    function showInput() {
+        setShowToDos(true)
+    }
     return (
         <div className="todo">
-            <button className="todo-btn" onClick={toggleToDosHandler}>+ New todo</button>
+            <button className="todo-btn" onClick={showInput}>+ New todo</button>
             <p className="todo-text">Projects</p>
             <ul>
                 {projects
                     .filter(project => project.id === activeProjectId)
                     .map(project => (
-                        showToDos && (
-                           <ToDoInput project={project} projectId={project.id} addToDo={addToDo} />
-                        )
+                           <ToDoInput project={project} projectId={project.id} addToDo={addToDo} toggleToDosHandler={toggleToDosHandler} showToDos={showToDos}/> 
                     ))}
             </ul>
         </div>
