@@ -1,22 +1,27 @@
 const ToDos = ({ todo }) => {
+  console.log(todo)
+
   return (
-      <li className="input-project-item">
-          <div className="todo-details">
-              <div className="todo-title">
+      <li className="custom-todo-item">
+          <div className="custom-todo-details">
+              <div className="custom-todo-title">
                   <p>Title:</p>
                   <p>{todo.title}</p>
               </div>
-              <div className="todo-due-date">
+              <div className="custom-todo-due-date">
                   <p>Due date:</p>
-                  <p>{todo.dueDate}</p>
+                  <p>{todo.date}</p>
               </div>
-              <div className="todo-actions">
+              <div className="custom-todo-actions">
                   <button>Edit</button>
                   <button>Delete</button>
+                 <input className="checkBox" type="checkBox" name="checkBox"/>
               </div>
+             
           </div>
       </li>
   );
 };
 
 export default ToDos;
+

@@ -153,7 +153,11 @@ letter-spacing: 5.5px;
 .custom-input-project-item {
   list-style-type: none;
   margin-bottom: 10px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .custom-input-project-container {
@@ -162,7 +166,6 @@ letter-spacing: 5.5px;
   width: 800px;
   height: 100px;
   padding:2px;
-
 }
 
 .custom-input-field {
@@ -207,4 +210,66 @@ border:1px solid rgb(172, 172, 172);
 .custom-input-project-second-child{
   width: 100%;
   margin: 6px;
+}
+/* TODOS */
+.custom-todo-item {
+  list-style-type: none;
+  margin-top: 60px;
+  height: 50px;
+  width: 900px;
+  background-color: rgb(206, 206, 199);
+  padding: 4px;
+  height: 50px;
+  border: 1px solid rgb(104, 104, 104);
+}
+
+.custom-todo-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-todo-details p {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.custom-todo-actions button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 45%;
+  margin:3px;
+  font-size: 18px;
+}
+.custom-todo-actions button:nth-child(2){
+  background-color: red;
+}
+
+.custom-todo-title {
+  display: flex;
+  font-size: 22px;
+}
+.custom-todo-due-date{
+  display: flex;
+}
+.todo ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-todo-actions{
+  display: flex;
+  align-items: center;
+}
+.checkBox{
+  width: 35px;
+  height: 35px;
+  margin-left: 14px;
+  cursor: pointer;
 }
