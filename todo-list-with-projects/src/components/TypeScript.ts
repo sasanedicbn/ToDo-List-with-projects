@@ -9,3 +9,9 @@ export type Todo = {
     date: string;
     checked: boolean;
 }
+export type SideBarProps ={
+    projects: Project,
+    addProject: (name: string) => void,
+    deleteProject: (id: string) => void,
+    showToDo: (id: string) => void,
+}

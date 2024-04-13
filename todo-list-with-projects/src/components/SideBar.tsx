@@ -1,6 +1,7 @@
 import  { useState } from "react";
+import { SideBarProps } from "./TypeScript";
 
-const SideBar = ({ projects, addProject, deleteProject, showToDo }) => {
+const SideBar = ({ projects, addProject, deleteProject, showToDo }:SideBarProps) => {
   const [showInput, setShowInput] = useState(false);
   const [projectName, setProjectName] = useState("");
  
@@ -9,7 +10,7 @@ const SideBar = ({ projects, addProject, deleteProject, showToDo }) => {
     setShowInput(!showInput);
   }
 
-  function addNewProject(name) {
+  function addNewProject() {
     if (projectName.trim() !== "") {
       addProject(projectName);
       setProjectName(""); 
