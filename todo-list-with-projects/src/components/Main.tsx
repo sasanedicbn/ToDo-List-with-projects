@@ -6,7 +6,7 @@ const Main = () => {
     const [projects, setProjects] = useState([]);
     const [activeProjectId, setActiveProjectId] = useState(null); 
 
-    function addProject(name) {
+    function addProject(name:string) {
         const newProject = {
             id: Math.random().toString(36).substring(7),
             name: name,
