@@ -33,11 +33,11 @@ const Main = () => {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
     }
 
-    function showToDo(id) {
+    function showToDo(id:string) {
         setActiveProjectId(id); 
     }
     
-    function deleteToDo(id) {
+    function deleteToDo(id:string) {
         setProjects(prevProjects => {
             return prevProjects.map(project => {
                 if(project.id === activeProjectId){
