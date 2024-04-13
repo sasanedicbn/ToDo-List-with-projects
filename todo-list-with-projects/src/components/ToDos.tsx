@@ -1,4 +1,4 @@
-const ToDos = ({ todo }) => {
+const ToDos = ({ todo, handleDeleteToDo }) => {
   console.log(todo)
 
   return (
@@ -14,7 +14,7 @@ const ToDos = ({ todo }) => {
               </div>
               <div className="custom-todo-actions">
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => handleDeleteToDo(todo.id)}>Delete</button>
                  <input className="checkBox" type="checkBox" name="checkBox"/>
               </div>
              

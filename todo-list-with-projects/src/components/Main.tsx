@@ -39,16 +39,18 @@ const Main = () => {
     
     function deleteToDo(id) {
         setProjects(prevProjects => {
-           prevProjects.map(project => {
-            if(project.id === activeProjectId){
-               return{
-                ...project,
-                todos: project.todos.filter(todo => todo.id === id)
-               }
-            }
-           })
+            return prevProjects.map(project => {
+                if(project.id === activeProjectId){
+                    return{
+                        ...project,
+                        todos: project.todos.filter(todo => todo.id !== id) 
+                    }
+                }
+                return project; 
+            })
         })
     }
+    
     console.log(projects)
 
     return(
