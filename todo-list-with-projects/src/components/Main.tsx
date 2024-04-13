@@ -1,10 +1,11 @@
 import { useState } from "react";
 import SideBar from "./SideBar";
 import Projects from "./Projects";
+import { Project, Todo } from "./TypeScript";
 
 const Main = () => {
-    const [projects, setProjects] = useState([]);
-    const [activeProjectId, setActiveProjectId] = useState(null); 
+    const [projects, setProjects] = useState<Project>([]);
+    const [activeProjectId, setActiveProjectId] = useState<string | null>(null); 
 
     function addProject(name:string) {
         const newProject = {
@@ -14,7 +15,7 @@ const Main = () => {
         };
         setProjects(prevProjects => [...prevProjects, newProject]);
     }
-    function addToDo(todo, projectId) {
+    function addToDo(todo: Todo, projectId:string) {
     setProjects(prevProjects => {
         return prevProjects.map(project => {
             if (project.id === projectId) {
@@ -29,7 +30,7 @@ const Main = () => {
         });
     });
 }
-    function deleteProject(id) {
+    function deleteProject(id:string) {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
     }
 
