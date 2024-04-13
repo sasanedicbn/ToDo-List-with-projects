@@ -51,7 +51,7 @@ const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler 
             )}
             <ul>
                 {project.todos.map((todo) => (
-                    <ToDos key={todo.id} todo={todo} />
+                    <ToDos key={todo.id} todo={todo} handleDeleteToDo={deleteToDo}/>
                 ))}
             </ul>
         </>

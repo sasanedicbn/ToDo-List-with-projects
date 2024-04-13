@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ToDoInput from "./ToDoInput";
 
-const Projects = ({ projects, activeProjectId, addToDo }) => {
+const Projects = ({ projects, activeProjectId, addToDo, deleteToDo }) => {
     const [showToDos, setShowToDos] = useState(false);
 
     function toggleToDosHandler() {
@@ -18,7 +18,7 @@ const Projects = ({ projects, activeProjectId, addToDo }) => {
                 {projects
                     .filter(project => project.id === activeProjectId)
                     .map(project => (
-                           <ToDoInput project={project} projectId={project.id} addToDo={addToDo} toggleToDosHandler={toggleToDosHandler} showToDos={showToDos}/> 
+                           <ToDoInput deleteToDo={deleteToDo} project={project} projectId={project.id} addToDo={addToDo} toggleToDosHandler={toggleToDosHandler} showToDos={showToDos}/> 
                     ))}
             </ul>
         </div>
