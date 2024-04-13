@@ -15,29 +15,39 @@ const Main = () => {
         setProjects(prevProjects => [...prevProjects, newProject]);
     }
     function addToDo(todo, projectId) {
-        setProjects(prevProjects => {
-            return prevProjects.map(project => {
-                if (project.id === projectId) {
-                    // Ako je ovo ciljani projekat, ažurirajte listu todos
-                    return {
-                        ...project,
-                        todos: [...project.todos, todo]
-                    };
-                }
-                // Inače, vratite projekat nepromenjen
-                return project;
-            });
-        });
-    }
-    
-    
+    setProjects(prevProjects => {
+        return prevProjects.map(project => {
+            if (project.id === projectId) {
 
+                return {
+                    ...project,
+                    todos: [...project.todos, todo]
+                };
+            }
+           
+            return project;
+        });
+    });
+}
     function deleteProject(id) {
         setProjects(prevProjects => prevProjects.filter(project => project.id !== id));
     }
 
     function showToDo(id) {
         setActiveProjectId(id); 
+    }
+    
+    function deleteToDo(id) {
+        setProjects(prevProjects => {
+           prevProjects.map(project => {
+            if(project.id === activeProjectId){
+               return{
+                ...project,
+                todos: project.todos.filter(todo => todo.id === id)
+               }
+            }
+           })
+        })
     }
     console.log(projects)
 
