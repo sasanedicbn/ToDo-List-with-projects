@@ -7,6 +7,7 @@ const Main = () => {
     const [projects, setProjects] = useState<Project>([]);
     const [activeProjectId, setActiveProjectId] = useState<string | null>(null); 
 
+
     function addProject(name:string) {
         const newProject = {
             id: Math.random().toString(36).substring(7),
@@ -51,6 +52,14 @@ const Main = () => {
             })
         })
     }
+
+    // function editToDo(id) {
+    //     setProjects(prevProjects => {
+    //         return prevProjects.map(project => {
+
+    //         }) 
+    // })
+    // }
     
     console.log(projects)
 
