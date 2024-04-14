@@ -15,3 +15,10 @@ export type SideBarProps ={
     deleteProject: (id: string) => void,
     showToDo: (id: string) => void,
 }
+export type ProjectsProps = {
+      projects:Project,
+      activeProjectId:string | null,
+      addToDo:(todo: Todo, projectId:string) => void,
+      deleteToDo:(id:string) => void,
+     
+}

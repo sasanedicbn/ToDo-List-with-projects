@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ToDoInput from "./ToDoInput";
+import { ProjectsProps } from "./TypeScript";
 
-const Projects = ({ projects, activeProjectId, addToDo, deleteToDo }) => {
+const Projects = ({ projects, activeProjectId, addToDo, deleteToDo}:ProjectsProps) => {
     const [showToDos, setShowToDos] = useState(false);
 
     function toggleToDosHandler() {
