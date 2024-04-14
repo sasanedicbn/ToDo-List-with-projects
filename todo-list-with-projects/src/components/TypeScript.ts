@@ -22,3 +22,13 @@ export type ProjectsProps = {
       deleteToDo:(id:string) => void,
      
 }
+export type ToDoInputProps ={
+    project: {id: string;
+    name: string;
+    todos: Todo[]},
+    projectId:string,
+    addToDo:(todo: Todo, projectId:string) => void,
+    showToDos: boolean,
+    toggleToDosHandler:() => void,
+    deleteToDo: (id: string) => void
+}
