@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import ToDos from './ToDos';
+import { ToDoInputProps,  } from './TypeScript';
 
-const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler, deleteToDo}) => {
+const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler, deleteToDo}:ToDoInputProps) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
 

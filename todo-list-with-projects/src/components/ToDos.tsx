@@ -1,4 +1,6 @@
-const ToDos = ({ todo, handleDeleteToDo }) => {
+import { Todo } from "./TypeScript";
+
+const ToDos = ({ todo, handleDeleteToDo }:{todo: Todo,handleDeleteToDo: (id: string) => void }) => {
   console.log(todo)
 
   return (
