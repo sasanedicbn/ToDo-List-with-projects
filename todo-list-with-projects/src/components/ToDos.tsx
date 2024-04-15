@@ -5,6 +5,7 @@ const ToDos = ({ todo, handleDeleteToDo, handleEditToDo }: { todo: Todo, handleD
     const [editedTodo, setEditedTodo] = useState({ ...todo });
     const [isEditing, setIsEditing] = useState(false);
 
+    console.log(editedTodo)
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEditedTodo({
             ...editedTodo,

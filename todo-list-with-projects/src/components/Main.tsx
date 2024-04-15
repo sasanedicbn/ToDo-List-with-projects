@@ -59,7 +59,7 @@ const Main = () => {
     return(
         <div className="container-main">
             <SideBar projects={projects} addProject={addProject} deleteProject={deleteProject} showToDo={showToDo}/>
-            <Projects projects={projects} activeProjectId={activeProjectId} addToDo={addToDo} deleteToDo={deleteToDo} /> 
+            <Projects projects={projects} activeProjectId={activeProjectId} addToDo={addToDo} deleteToDo={deleteToDo} setProjects={setProjects}/> 
         </div>
     );
 }

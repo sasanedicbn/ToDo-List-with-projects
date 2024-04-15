@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ToDos from './ToDos';
 import { ToDoInputProps,  } from './TypeScript';
 
-const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler, deleteToDo, activeProjectId, setShowToDos}:ToDoInputProps) => {
+const ToDoInput = ({ project, projectId,setProjects, addToDo, showToDos, toggleToDosHandler, deleteToDo, activeProjectId, setShowToDos}:ToDoInputProps) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
     const [isEditing, setIsEditing] = useState(false);
@@ -20,10 +20,8 @@ const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler,
         setDueDate('')
         setShowToDos(false)
     };
-    // const activeProject = projects.map((project) => project.id === activeProjectId ? <todo/> : null)
-    // const handleEditTodo = () => {
-     
-    // }
+   
+    
     return (
         <>
             {showToDos && project.id === activeProjectId && (
@@ -64,7 +62,7 @@ const ToDoInput = ({ project, projectId, addToDo, showToDos, toggleToDosHandler,
             )} 
             <ul>
                 {project.todos.map((todo) => (
-                    project.id === activeProjectId ? <ToDos key={todo.id} todo={todo} handleDeleteToDo={deleteToDo}/> : null
+                    project.id === activeProjectId ? <ToDos key={todo.id} todo={todo} handleDeleteToDo={deleteToDo} handleEditToDo={handleEditToDo}/> : null
                 ))}
             </ul>
         </>
