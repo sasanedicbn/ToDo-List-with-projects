@@ -20,7 +20,24 @@ const ToDoInput = ({ project, projectId,setProjects, addToDo, showToDos, toggleT
         setDueDate('')
         setShowToDos(false)
     };
-   
+    const handleEditToDo = (id: string, updatedTodo: Todo) => {
+        setProjects(prevProjects => {
+            return prevProjects.map(project => {
+                if (project.id === activeProjectId) {
+                    return {
+                        ...project,
+                        todos: project.todos.map(todo => {
+                            if (todo.id === id) {
+                                return updatedTodo;
+                            }
+                            return todo;
+                        })
+                    };
+                }
+                return project;
+            });
+        });
+    };
     
     return (
         <>
