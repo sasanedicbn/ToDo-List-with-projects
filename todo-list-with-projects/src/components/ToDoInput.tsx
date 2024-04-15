@@ -5,7 +5,7 @@ import { ToDoInputProps,  } from './TypeScript';
 const ToDoInput = ({ project, projectId,setProjects, addToDo, showToDos, toggleToDosHandler, deleteToDo, activeProjectId, setShowToDos}:ToDoInputProps) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
-    const [isEditing, setIsEditing] = useState(false);
+    const [isEditing, _] = useState(false);
 
     console.log(project.todos)
     const handleAddTodo = () => {

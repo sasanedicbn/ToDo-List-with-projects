@@ -4,6 +4,7 @@ import { Todo } from "./TypeScript";
 const ToDos = ({ todo, handleDeleteToDo, handleEditToDo }: { todo: Todo, handleDeleteToDo: (id: string) => void, handleEditToDo: (id: string, updatedTodo: Todo) => void }) => {
     const [editedTodo, setEditedTodo] = useState({ ...todo });
     const [isEditing, setIsEditing] = useState(false);
+    
 
     console.log(editedTodo)
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
