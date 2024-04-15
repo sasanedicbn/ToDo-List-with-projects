@@ -20,6 +20,7 @@ export type ProjectsProps = {
       activeProjectId:string | null,
       addToDo:(todo: Todo, projectId:string) => void,
       deleteToDo:(id:string) => void,
+      setProjects:  React.Dispatch<React.SetStateAction<Project>>,
      
 }
 export type ToDoInputProps ={
@@ -31,4 +32,8 @@ export type ToDoInputProps ={
     showToDos: boolean,
     toggleToDosHandler:() => void,
     deleteToDo: (id: string) => void
+    setProjects: React.Dispatch<React.SetStateAction<boolean>>,
+    activeProjectId:string | null,
+    setShowToDos:React.Dispatch<React.SetStateAction<boolean>>,
+
 }
