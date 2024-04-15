@@ -53,13 +53,6 @@ const Main = () => {
         })
     }
 
-    // function editToDo(id) {
-    //     setProjects(prevProjects => {
-    //         return prevProjects.map(project => {
-
-    //         }) 
-    // })
-    // }
     
     console.log(projects)
 
