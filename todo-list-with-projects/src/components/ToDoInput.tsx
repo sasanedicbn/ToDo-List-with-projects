@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ToDos from './ToDos';
 import { ToDoInputProps,  } from './TypeScript';
 
+
 const ToDoInput = ({ project, projectId,setProjects, addToDo, showToDos, toggleToDosHandler, deleteToDo, activeProjectId, setShowToDos}:ToDoInputProps) => {
     const [todoText, setTodoText] = useState('');
     const [dueDate, setDueDate] = useState('');
@@ -20,6 +21,7 @@ const ToDoInput = ({ project, projectId,setProjects, addToDo, showToDos, toggleT
         setDueDate('')
         setShowToDos(false)
     };
+
     const handleEditToDo = (id: string, updatedTodo: Todo) => {
         setProjects(prevProjects => {
             return prevProjects.map(project => {
