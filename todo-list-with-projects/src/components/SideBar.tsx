@@ -5,7 +5,7 @@ const SideBar = ({ projects, addProject, deleteProject, showToDo }:SideBarProps)
   const [showInput, setShowInput] = useState(false);
   const [projectName, setProjectName] = useState("");
  
-  console.log(projectName)
+
   function showInputhandler() {
     setShowInput(!showInput);
   }
